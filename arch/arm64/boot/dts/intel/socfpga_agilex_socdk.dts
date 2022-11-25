@@ -22,18 +22,9 @@
 		compatible = "gpio-leds";
 		hps0 {
 			label = "hps_led0";
-			gpios = <&portb 20 GPIO_ACTIVE_HIGH>;
+			gpios = <&portb 0 GPIO_ACTIVE_LOW>;
 		};
 
-		hps1 {
-			label = "hps_led1";
-			gpios = <&portb 19 GPIO_ACTIVE_HIGH>;
-		};
-
-		hps2 {
-			label = "hps_led2";
-			gpios = <&portb 21 GPIO_ACTIVE_HIGH>;
-		};
 	};
 
 	memory {
@@ -59,7 +50,7 @@
 		#size-cells = <0>;
 		compatible = "snps,dwmac-mdio";
 		phy0: ethernet-phy@0 {
-			reg = <4>;
+			reg = <1>;
 
 			txd0-skew-ps = <0>; /* -420ps */
 			txd1-skew-ps = <0>; /* -420ps */
@@ -106,7 +97,7 @@
 	flash@0 {
 		#address-cells = <1>;
 		#size-cells = <1>;
-		compatible = "micron,mt25qu02g", "jedec,spi-nor";
+		compatible = "micron,mt25qu01g", "jedec,spi-nor";
 		reg = <0>;
 		spi-max-frequency = <100000000>;
 
